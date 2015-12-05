@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to display the hour of the time right now.</p>
+
+<button onclick="DateFunction()">Try it</button>
+
+<p id="demo"></p>
+//This simply gives you the date and time at the present.//
+
+<script>
+var d1 = new Date();
+
+var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+function DateFunction() {
+    var d = new Date();
+    var h = d.getHours();
+    var m = d.getMinutes();
+    var s = d.getSeconds();
+    var txt = "Today is: ";
+    var txt1 = "Current time is: ";
+
+    if (h<12){ var x = "AM";}
+    else { var x = "PM";}
+
+    if (h>12) { var h = h-12;}
+    document.getElementById("demo").innerHTML = txt + days[d1.getDay()]+"<br>" + txt1+h +":"+ m+ ":" + s + x;
+}
+</script>
+
+
+</body>
+</html>
