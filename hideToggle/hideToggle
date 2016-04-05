@@ -1,0 +1,11 @@
+// JavaScript source code jsPizzaSpecials
+$(document).ready(function () {
+    $(".p_hidden").hide();
+
+    $("#menu_scroll").mouseenter(function() {
+        $(this).next().slideToggle(300);
+    });
+
+})
+
+//hide and toggle menu
