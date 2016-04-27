@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Event Handling</title>
+    <link rel="stylesheet" href="../style.css"/>
+    <script type="text/javascript" src="../jquery-1.11.1.js"></script>
+    <script type="text/javascript">
+        $("document").ready(function() {
+            $("#example").on("mousemove", onMouseOver);
+            $("#example").on("click", onMouseClick);
+            $("#example").on("Out of Range", onMouseLeave);
+        });
+        
+        function onMouseOver(evt) {
+            $("#example").text(evt.type + ": " + evt.pageX + ", " + evt.pageY
+                               + "\n" + "Button: " + evt.which + 
+                               " Key: " + evt.metaKey);
+        }
+        function onMouseClick(evt) {
+            $("#example").text(evt.type + ": " + evt.pageX + ", " + evt.pageY);
+            $("#example").off("mousemove", onMouseOver);
+        }
+        function onMouseLeave(evt) {
+            $("#example").text("Out of Range");
+        }
+    </script>
+</head>
+<body>
+    <h1>This is a simple JQuery file showing coordinates within a small area. </h1>
+    <p> jQuery Coordinates</p>
+    <div id="example">
+    </div>
+</body>
+</html>
