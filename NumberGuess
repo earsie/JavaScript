@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Try guessing a number from 1-100</p>
+
+<input id="demo" type="text">
+<button type="button" onclick="NumGuess()">Your Guess</button>
+<p id="message"></p>
+
+<script>
+function NumGuess() {
+    var message, num;
+    message = document.getElementById("message");
+    message.innerHTML = "";
+    num = document.getElementById("demo").value;
+    try { 
+        if(num == "")  throw "empty";
+        if(isNaN(num)) throw "not a number";
+        num = Number(num);
+        if(num < 35)    throw "too low"; //
+        if(num > 35)   throw "too high";
+        else    throw "CORRECT!"
+    }
+    catch(err) {
+
+        message.innerHTML = "Input is " + err;
+    }
+}
+</script>
+
+</body>
+</html>
