@@ -1,0 +1,49 @@
+<!Doctype html>
+<html>
+    <head>
+    <title>99 Bottles of Beer</title>
+    </head>
+    <body>
+    <!--Click on the buttons to either drink more beer or quit drinking.-->
+        <p>99 Bottles of Beer on the Wall!</p>
+   
+        <button type="button" onclick="Drink()">Drink Another</button>
+        <button type="button" onclick="Drunk()">Drunk Enough</button>
+        <p id="output"></p>
+        <p id="output1"></p>
+       
+        
+    <!--Here is the JS script-->
+    <script>
+        var x = 99;
+
+        function Drink(){ 
+            //var x;
+            if(x>0){
+               x=x-1; 
+            }
+             
+               document.getElementById("output").innerHTML= "There are " + x + " bottles of beer remaining.";
+            if(x>80 && x<90){
+                document.getElementById("output1").innerHTML= "Slow down!!";
+            }
+            if(x<80){
+                document.getElementById("output1").innerHTML= "You are absolutely drunk now, my friend.  Click the Drunk button.";
+            }
+            if(x<60){
+                document.getElementById("output1").innerHTML= "Someone call an ambulance; it's detox time!";
+            }
+        }
+
+                
+        function Drunk(){
+            document.getElementById("output").innerHTML = "I'm drunk.. goodnight!";
+            document.getElementById("output1").innerHTML= "";
+            //return;
+        }
+            
+
+    </script>
+    
+    </body>
+</html>
