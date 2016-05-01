@@ -4,7 +4,7 @@
     <title>99 Bottles of Beer</title>
     </head>
     <body>
-    <!--Click on the buttons to either drink more beer or quit drinking.-->
+    
         <p>99 Bottles of Beer on the Wall!</p>
    
         <button type="button" onclick="Drink()">Drink Another</button>
@@ -13,12 +13,13 @@
         <p id="output1"></p>
        
         
-    <!--Here is the JS script-->
+    <!--Here is the JS script for beer counting, disorderly conduct warnings, etc.-->
     <script>
         var x = 99;
 
         function Drink(){ 
-            //var x;
+            
+         try {   
             if(x>0){
                x=x-1; 
             }
@@ -33,13 +34,17 @@
             if(x<60){
                 document.getElementById("output1").innerHTML= "Someone call an ambulance; it's detox time!";
             }
+         }
+            catch(err) {
+                return err;
+            }
         }
 
                 
         function Drunk(){
             document.getElementById("output").innerHTML = "I'm drunk.. goodnight!";
             document.getElementById("output1").innerHTML= "";
-            //return;
+            
         }
             
 
